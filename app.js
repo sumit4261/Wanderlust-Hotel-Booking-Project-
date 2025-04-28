@@ -52,6 +52,7 @@ const store = MongoStore.create({
         secret: process.env.SECRET,
     },
     touchAfter: 24*3600,
+    mongoUrl: process.env.MONGO_URL,
 });
 
 store.on("error", (err) => {
