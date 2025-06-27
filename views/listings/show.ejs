@@ -24,7 +24,7 @@
         <div class="card-body crd-elm">
             <p class="card-text">
             <ul>
-                <p> Owned By :<%= listing.owner.username %>
+                <p> Owned By :<%= listing.owner ? listing.owner.username : "Unknown" %>
                 </p> <br>
                 <Li>
                     <%= listing.description %>
