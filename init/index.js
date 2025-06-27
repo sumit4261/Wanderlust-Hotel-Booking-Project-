@@ -1,8 +1,9 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../Models/listing.js");
 
-const MONGO_URL = "mongodb://localhost:27017/wandarlust";
+const MONGO_URL = process.env.ATLASDB_URL;
 
 main().then(() => {
     console.log("Connected to DB");

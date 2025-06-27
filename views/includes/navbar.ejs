@@ -43,14 +43,22 @@
     </div>
 
     <div class="navbar-nav ms-auto">
-      <a class="nav-item nav-link" href="/listings/new">Add New Listing</a>
-      <% if(!currUser) { %>
+      <% if(currUser) { %>
+      <div class="nav-item dropdown">
+        <a class="nav-item nav-link" href="/listings/new">Add New Listing</a>
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user-circle fa-lg me-1"></i> <span>My Profile</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="/users/profile">Profile</a></li>
+          <li><a class="dropdown-item" href="/listings/my">My Listings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      <% } else { %>
       <a class="nav-item nav-link" href="/signup"><b>SignUp</b></a>
       <a class="nav-item nav-link" href="/login"><b>Login</b></a>
-      <% } %>
-
-      <% if(currUser) { %>
-      <a class="nav-item nav-link" href="/logout"><b>Logout</b></a>
       <% } %>
     </div>
 
